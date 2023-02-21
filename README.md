@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS public.instansi (
 );
 
 CREATE TABLE IF NOT EXISTS public.penulis (
-    id_penulis smallint pg_catalog."default" NOT NULL,
-    id_instansi smallint pg_catalog."default" NOT NULL,
+    id_penulis smallint COLLATE pg_catalog."default" NOT NULL,
+    id_instansi smallint COLLATE pg_catalog."default" NOT NULL,
     nama_penulis varchar(50) NOT NULL,
     asal_penulis varchar(20) NOT NULL,
     pendidikan_terakhir varchar(50) NOT NULL,
@@ -48,20 +48,6 @@ CREATE TABLE IF NOT EXISTS public.penulis (
         ON DELETE NO ACTION
   );
 
-CREATE TABLE IF NOT EXISTS public.kamar_untuk_pasien(
-    id_kamar character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    id_pasien character varying(20) COLLATE pg_catalog."default" NOT NULL,
-    CONSTRAINT kamar_untuk_pasien_pkey PRIMARY KEY (id_kamar, id_pasien),
-    CONSTRAINT kamar_untuk_pasien_id_kamar_fkey FOREIGN KEY (id_kamar)
-        REFERENCES public.kamar (id_kamar) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION,
-    CONSTRAINT kamar_untuk_pasien_id_pasien_fkey FOREIGN KEY (id_pasien)
-        REFERENCES public.pasien (id_pasien) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-);
-
 CREATE TABLE IF NOT EXISTS public.penerbit (
     id_penerbit smallint NOT NULL,
     nama_penerbit varchar(50) NOT NULL,
@@ -72,8 +58,8 @@ CREATE TABLE IF NOT EXISTS public.penerbit (
 );
 
 CREATE TABLE IF NOT EXISTS public.jurnal (
-    id_jurnal smallint pg_catalog."default" NOT NULL,
-    id_penerbit smallint pg_catalog."default" NOT NULL,
+    id_jurnal smallint COLLATE pg_catalog."default" NOT NULL,
+    id_penerbit smallint COLLATE pg_catalog."default" NOT NULL,
     nama_jurnal varchar(100) NOT NULL,
     tahun_jurnal num NOT NULL,
     jumlah_paper integer NOT NULL,
@@ -86,11 +72,11 @@ CREATE TABLE IF NOT EXISTS public.jurnal (
 );
 
 CREATE TABLE IF NOT EXISTS public.judul (
-    doi character varying(15) pg_catalog."default" NOT NULL,
-    id_penulis smallint pg_catalog."default" NOT NULL,
-    id_instansi smallint pg_catalog."default" NOT NULL,
-    id_penerbit smallint pg_catalog."default" NOT NULL,
-    id_jurnal smallint pg_catalog."default" NOT NULL,
+    doi character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    id_penulis smallint COLLATE pg_catalog."default" NOT NULL,
+    id_instansi smallint COLLATE pg_catalog."default" NOT NULL,
+    id_penerbit smallint COLLATE pg_catalog."default" NOT NULL,
+    id_jurnal smallint COLLATE pg_catalog."default" NOT NULL,
     judul_paper varchar(100) NOT NULL,
     tahun_paper num NOT NULL,
     jumlah_sitasi integer,
