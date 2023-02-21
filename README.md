@@ -82,10 +82,11 @@ CREATE TABLE IF NOT EXISTS public.judul (
     id_penulis smallint pg_catalog."default" NOT NULL,
     id_instansi smallint pg_catalog."default" NOT NULL,
     id_penerbit smallint pg_catalog."default" NOT NULL,
+    id_jurnal smallint pg_catalog."default" NOT NULL,
     judul_paper varchar(100) NOT NULL,
     tahun_paper num NOT NULL,
     jumlah_sitasi integer,
-    volume_paper integer,
+    hal_paper varchar(10),
     CONSTRAINT judul_pkey PRIMARY KEY (doi),
     CONSTRAINT judul_id_penulis_fkey FOREIGN KEY (id_penulis)
         REFERENCES public.penulis (id_penulis) MATCH SIMPLE
@@ -98,6 +99,10 @@ CREATE TABLE IF NOT EXISTS public.judul (
     CONSTRAINT judul_id_penerbit_fkey FOREIGN KEY (id_penerbit)
         REFERENCES public.penerbit (id_penerbit) MATCH SIMPLE
         ON UPDATE NO ACTION
-        ON DELETE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT judul_id_jurnal_fkey FOREIGN KEY (id_jurnal)
+        REFERENCES public.jurnal (id_jurnal) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION    
 )
 ```
