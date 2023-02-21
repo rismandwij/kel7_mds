@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS public.instansi (
     nama_instansi varchar(50) NOT NULL,
     asal_instansi varchar(50) NOT NULL,
     PRIMARY KEY (id_instansi)
-)
+);
 
 CREATE TABLE IF NOT EXISTS public.penulis (
     id_penulis smallint pg_catalog."default" NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS public.penulis (
         REFERENCES public.instansi (id_instansi) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-  )
+  );
 
 CREATE TABLE IF NOT EXISTS public.kamar_untuk_pasien(
     id_kamar character varying(10) COLLATE pg_catalog."default" NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS public.penerbit (
     akreditasi varchar(2) NOT NULL,
     jumlah_jurnal int NOT NULL,
     PRIMARY KEY (id_penerbit)
-)
+);
 
 CREATE TABLE IF NOT EXISTS public.jurnal (
     id_jurnal smallint pg_catalog."default" NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS public.jurnal (
         REFERENCES public.penerbit (id_penerbit) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
-)
+);
 
 CREATE TABLE IF NOT EXISTS public.judul (
     doi character varying(15) pg_catalog."default" NOT NULL,
@@ -112,6 +112,5 @@ CREATE TABLE IF NOT EXISTS public.judul (
         REFERENCES public.jurnal (id_jurnal) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION    
-)
-;
+);
 ```
