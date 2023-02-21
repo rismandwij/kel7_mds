@@ -12,6 +12,10 @@ Kelompok 7
 * G1501222040 RAFIKA AUFA HASIBUAN
 * G1501222058 L.M. Risman Dwi Jumansyah
 
+## Skema
+
+## ERD
+
 ## Create Table
 Jurnal
 
