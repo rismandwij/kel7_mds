@@ -15,7 +15,7 @@ Kelompok 7
 ## Skema
 
 <p align="center">
-  <img width="400" height="400" src="https://github.com/rismandwij/Data/raw/main/Screenshot%20(99).png">
+  <img width="600" height="400" src="https://github.com/rismandwij/Data/raw/main/Screenshot%20(99).png">
 </p>
 
 ## ERD
