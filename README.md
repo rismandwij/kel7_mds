@@ -1,18 +1,16 @@
-# kel7_mds
-Project Akhir MDS 2023
+# Project Akhir MDS 2023
+
+<p align="center">
+  <img width="400" height="143" src="http://bsdm.unas.ac.id/wp-content/uploads/2022/08/sinta_logo1.png">
+</p>
+
+Project akhir mata kuliah MDS mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud.
 
 Kelompok 7
 * G1501221001 Akmarina Khairunnisa
 * G1501221026 MEGAWATI
 * G1501222040 RAFIKA AUFA HASIBUAN
 * G1501222058 L.M. Risman Dwi Jumansyah
-
-![Sinta Kemendikbud ><](http://bsdm.unas.ac.id/wp-content/uploads/2022/08/sinta_logo1.png)
-<p align="center">
-  <img width="400" height="143" src="http://bsdm.unas.ac.id/wp-content/uploads/2022/08/sinta_logo1.png">
-</p>
-
-Project akhir mata kuliah MDS mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud.
 
 ## Create Table
 Jurnal
