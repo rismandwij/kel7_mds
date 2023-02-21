@@ -17,79 +17,87 @@ Kelompok 7
 ## ERD
 
 ## Create Table
-Jurnal
 
 ``` sql
-CREATE TABLE IF NOT EXISTS public.judul (
-    doi character varying(15) NOT NULL,
-    judul_paper character varying(100) NOT NULL,
-    tahun numeric NOT NULL,
-    id_penulis character NOT NULL,
-    nama_penulis character varying(50) NOT NULL,
-    id_instansi character NOT NULL,
-    instansi character NOT NULL,
-    jumlah_sitasi integer,
-    id_penerbit character NOT NULL,
-    penerbit character NOT NULL,
-    volume integer,
-    PRIMARY KEY (doi) 
-)
-
-CREATE TABLE IF NOT EXISTS public.penulis (
-    id_penulis character NOT NULL,
-    nama_penulis character varying(30) NOT NULL,
-    id_instansi character NOT NULL,
-    instansi character NOT NULL,
-    asal character NOT NULL,
-    pendidikan_terakhir character NOT NULL,
-    jumlah_publikasi integer,
-    PRIMARY KEY (id_penulis) 
-)
-
 CREATE TABLE IF NOT EXISTS public.instansi (
-    id_instansi character NOT NULL,
-    instansi character NOT NULL,
-    asal_instansi character NOT NULL,
+    id_instansi smallint NOT NULL,
+    nama_instansi varchar(50) NOT NULL,
+    asal_instansi varchar(50) NOT NULL,
     PRIMARY KEY (id_instansi)
 )
 
-CREATE TABLE IF NOT EXISTS public.jurnal (
-    id_jurnal character NOT NULL,
-    nama_jurnal character NOT NULL,
-    tahun_jurnal character NOT NULL,
-    jumlah_paper character NOT NULL,
-    akreditasi_jurnal character NOT NULL,
-    PRIMARY KEY (id_jurnal)
-)
+CREATE TABLE IF NOT EXISTS public.penulis (
+    id_penulis smallint pg_catalog."default" NOT NULL,
+    id_instansi smallint pg_catalog."default" NOT NULL,
+    nama_penulis varchar(50) NOT NULL,
+    asal_penulis varchar(20) NOT NULL,
+    pendidikan_terakhir varchar(50) NOT NULL,
+    jumlah_publikasi integer,
+    CONSTRAINT penulis_pkey PRIMARY KEY (id_penulis),
+    CONSTRAINT penulis_id_instansi_fkey FOREIGN KEY (id_instansi)
+        REFERENCES public.instansi (id_instansi) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+  )
 
-CREATE TABLE IF NOT EXISTS public.jurnal (
-    id_jurnal character NOT NULL,
-    nama_jurnal character NOT NULL,
-    tahun_jurnal character NOT NULL,
-    jumlah_paper character NOT NULL,
-    akreditasi_jurnal character NOT NULL,
-    PRIMARY KEY (id_jurnal)
-)
+CREATE TABLE IF NOT EXISTS public.kamar_untuk_pasien(
+    id_kamar character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    id_pasien character varying(20) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT kamar_untuk_pasien_pkey PRIMARY KEY (id_kamar, id_pasien),
+    CONSTRAINT kamar_untuk_pasien_id_kamar_fkey FOREIGN KEY (id_kamar)
+        REFERENCES public.kamar (id_kamar) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT kamar_untuk_pasien_id_pasien_fkey FOREIGN KEY (id_pasien)
+        REFERENCES public.pasien (id_pasien) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+);
 
 CREATE TABLE IF NOT EXISTS public.penerbit (
-    id_penerbit character NOT NULL,
-    nama_penerbit character NOT NULL,
-    tahun_berdiri character NOT NULL,
-    akreditasi character NOT NULL,
-    jumlah_jurnal character NOT NULL,
+    id_penerbit smallint NOT NULL,
+    nama_penerbit varchar(50) NOT NULL,
+    tahun_berdiri num NOT NULL,
+    akreditasi varchar(2) NOT NULL,
+    jumlah_jurnal int NOT NULL,
     PRIMARY KEY (id_penerbit)
 )
 
-CREATE TABLE IF NOT EXISTS public.kategori (
-    id_kategori character NOT NULL,
-    kategori character NOT NULL,
-    PRIMARY KEY (id_kategori)
+CREATE TABLE IF NOT EXISTS public.jurnal (
+    id_jurnal smallint pg_catalog."default" NOT NULL,
+    id_penerbit smallint pg_catalog."default" NOT NULL,
+    nama_jurnal varchar(100) NOT NULL,
+    tahun_jurnal num NOT NULL,
+    jumlah_paper integer NOT NULL,
+    akreditasi_jurnal varchar(2) NOT NULL,
+    CONSTRAINT jurnal_pkey PRIMARY KEY (id_jurnal),
+    CONSTRAINT jurnal_id_penerbit_fkey FOREIGN KEY (id_penerbit)
+        REFERENCES public.penerbit (id_penerbit) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
 )
 
-CREATE TABLE IF NOT EXISTS public.ilmu (
-    id_ilmu character NOT NULL,
-    bidang_ilmu character NOT NULL,
-    PRIMARY KEY (id_ilmu)
+CREATE TABLE IF NOT EXISTS public.judul (
+    doi character varying(15) pg_catalog."default" NOT NULL,
+    id_penulis smallint pg_catalog."default" NOT NULL,
+    id_instansi smallint pg_catalog."default" NOT NULL,
+    id_penerbit smallint pg_catalog."default" NOT NULL,
+    judul_paper varchar(100) NOT NULL,
+    tahun_paper num NOT NULL,
+    jumlah_sitasi integer,
+    volume_paper integer,
+    CONSTRAINT judul_pkey PRIMARY KEY (doi),
+    CONSTRAINT judul_id_penulis_fkey FOREIGN KEY (id_penulis)
+        REFERENCES public.penulis (id_penulis) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT judul_id_instansi_fkey FOREIGN KEY (id_instansi)
+        REFERENCES public.instansi (id_instansi) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT judul_id_penerbit_fkey FOREIGN KEY (id_penerbit)
+        REFERENCES public.penerbit (id_penerbit) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
 )
-
 ```
