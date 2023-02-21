@@ -14,6 +14,10 @@ Kelompok 7
 
 ## Skema
 
+<p align="center">
+  <img width="400" height="143" src="https://github.com/rismandwij/Data/raw/main/Screenshot%20(100).png">
+</p>
+
 ## ERD
 
 ## Create Table
