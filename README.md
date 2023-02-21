@@ -113,4 +113,5 @@ CREATE TABLE IF NOT EXISTS public.judul (
         ON UPDATE NO ACTION
         ON DELETE NO ACTION    
 )
+;
 ```
