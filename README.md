@@ -7,7 +7,7 @@
 Project akhir mata kuliah MDS mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud.
 
 Kelompok 7
-* G1501221001 Akmarina Khairunnisa
+* G1501221001 Akmarina Khairunnisa 
 * G1501221026 MEGAWATI
 * G1501222040 RAFIKA AUFA HASIBUAN
 * G1501222058 L.M. Risman Dwi Jumansyah
@@ -62,7 +62,8 @@ CREATE TABLE IF NOT EXISTS public.penerbit (
     PRIMARY KEY (id_penerbit)
 );
 ```
-
+## Create Table Jurnal
+```sql
 CREATE TABLE IF NOT EXISTS public.jurnal (
     id_jurnal smallint COLLATE pg_catalog."default" NOT NULL,
     id_penerbit smallint COLLATE pg_catalog."default" NOT NULL,
@@ -76,7 +77,9 @@ CREATE TABLE IF NOT EXISTS public.jurnal (
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 );
-
+```
+## Create Table Judul
+```sql
 CREATE TABLE IF NOT EXISTS public.judul (
     doi character varying(15) COLLATE pg_catalog."default" NOT NULL,
     id_penulis smallint COLLATE pg_catalog."default" NOT NULL,
