@@ -51,7 +51,8 @@ CREATE TABLE IF NOT EXISTS public.penulis (
         ON DELETE NO ACTION
   );
   ```
-
+## Create Table Penerbit
+```sql
 CREATE TABLE IF NOT EXISTS public.penerbit (
     id_penerbit smallint NOT NULL,
     nama_penerbit varchar(50) NOT NULL,
@@ -60,6 +61,7 @@ CREATE TABLE IF NOT EXISTS public.penerbit (
     jumlah_jurnal int NOT NULL,
     PRIMARY KEY (id_penerbit)
 );
+```
 
 CREATE TABLE IF NOT EXISTS public.jurnal (
     id_jurnal smallint COLLATE pg_catalog."default" NOT NULL,
