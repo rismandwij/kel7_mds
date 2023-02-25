@@ -24,7 +24,7 @@ Kelompok 7
   <img width="600" height="400" src="https://github.com/rismandwij/Data/raw/main/Screenshot%20(100).png">
 </p>
 
-## Create Table
+## Create Table Instansi
 
 ``` sql
 CREATE TABLE IF NOT EXISTS public.instansi (
@@ -33,7 +33,10 @@ CREATE TABLE IF NOT EXISTS public.instansi (
     asal_instansi varchar(50) NOT NULL,
     PRIMARY KEY (id_instansi)
 );
+```
 
+## Create Table Penulis
+```sql
 CREATE TABLE IF NOT EXISTS public.penulis (
     id_penulis smallint COLLATE pg_catalog."default" NOT NULL,
     id_instansi smallint COLLATE pg_catalog."default" NOT NULL,
@@ -47,6 +50,7 @@ CREATE TABLE IF NOT EXISTS public.penulis (
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
   );
+  ```
 
 CREATE TABLE IF NOT EXISTS public.penerbit (
     id_penerbit smallint NOT NULL,
