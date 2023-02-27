@@ -7,7 +7,7 @@
 Project akhir mata kuliah MDS mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud.
 
 Kelompok 7
-* **Akmarina Khairunnisa** (G1501221001) Sebagai **Front Developer**
+* **Akmarina Khairunnisa** (G1501221001) Sebagai **Frontend Developer**
 * **Megawati** (G1501221026) Sebagai **Techincal Writer**
 * **Rafika Aufa Hasibuan** (G1501222040) Sebagai **Backend Developer**
 * **L.M. Risman Dwi Jumansyah** (G1501222040) Sebagai **Database Manager**
