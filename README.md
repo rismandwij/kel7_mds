@@ -4,7 +4,7 @@
   <img width="400" height="143" src="http://bsdm.unas.ac.id/wp-content/uploads/2022/08/sinta_logo1.png">
 </p>
 
-Project akhir mata kuliah MDS mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud.
+Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang akan .
 
 Kelompok 7
 * **Akmarina Khairunnisa** (G1501221001) Sebagai **Frontend Developer**
