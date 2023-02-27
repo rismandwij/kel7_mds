@@ -21,7 +21,7 @@ Kelompok 7
 ## ERD
 
 <p align="center">
-  <img width="600" height="400" src="https://github.com/rismandwij/Data/raw/main/Screenshot%20(100).png">
+  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/ERD.jpeg">
 </p>
 
 ## Database
