@@ -4,7 +4,9 @@
   <img width="400" height="143" src="http://bsdm.unas.ac.id/wp-content/uploads/2022/08/sinta_logo1.png">
 </p>
 
-Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud. Project ini mengspesifikasikan pencarian jurnal-jurnal yang berhubungan dengan **statistika** secara umum. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang dapat memudahkan user dalam mencari referensi jurnal untuk sebuah penelitian. 
+Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud. Project ini mengspesifikasikan pencarian jurnal-jurnal yang berhubungan dengan **statistika** secara umum. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang dapat memudahkan user dalam mencari referensi jurnal untuk sebuah penelitian. User dapat mencari jurnal berdasarkan kategori yag di inginkan, misalnya pencarian berdasarkan sinta jurnal, instansi penulis, hingga tahun terbit jurnal terkait.
+
+
 
 Kelompok 7
 * **Akmarina Khairunnisa** (G1501221001) Sebagai **Frontend Developer**
@@ -88,12 +90,12 @@ CREATE TABLE IF NOT EXISTS public.judul (
     id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL, 
     id_paper varchar(10) COLLATE pg_catalog."default" NOT NULL,  
-    judul_paper varchar(500) NOT NULL,
-    nama_penerbit varchar(200),
-    nama_journal varchar(200),
+    judul_paper char(200) NOT NULL,
+    nama_penerbit char(100),
+    nama_journal char(100),
     penulis_ke int,
     jumlah_penulis int,
-    team_penulis char(200),
+    team_penulis char(100),
     tahun_terbit char(4),
     doi char(50),
     accred char(10),    
