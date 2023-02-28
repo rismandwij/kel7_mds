@@ -88,15 +88,15 @@ CREATE TABLE IF NOT EXISTS public.judul (
     id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL, 
     id_paper varchar(10) COLLATE pg_catalog."default" NOT NULL,  
-    judul_paper varchar(200) NOT NULL,
-    nama_penerbit varchar(100),
-    nama_journal varchar(100),
-    penulis_ke int(1),
-    jumlah_penulis int(1),
-    team_penulis varchar(100),
-    tahun_terbit varchar(4),
-    doi varchar(50),
-    accred varchar(10),    
+    judul_paper char(200) NOT NULL,
+    nama_penerbit char(100),
+    nama_journal char(100),
+    penulis_ke int,
+    jumlah_penulis int,
+    team_penulis char(100),
+    tahun_terbit char(4),
+    doi char(50),
+    accred char(10),    
     CONSTRAINT judul_pkey PRIMARY KEY (id_paper),
     CONSTRAINT judul_id_penulis_fkey FOREIGN KEY (id_sinta)
         REFERENCES public.penulis (id_sinta) MATCH SIMPLE
@@ -107,7 +107,7 @@ CREATE TABLE IF NOT EXISTS public.judul (
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
     CONSTRAINT judul_id_dept_fkey FOREIGN KEY (id_dept)
-        REFERENCES public.dept (id_dept) MATCH SIMPLE
+        REFERENCES public.departemen (id_dept) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
     );
