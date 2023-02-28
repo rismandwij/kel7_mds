@@ -13,7 +13,7 @@ Kelompok 7
 * **L.M. Risman Dwi Jumansyah** (G1501222040) Sebagai **Database Manager**
 
 ## Skema
-
+Tabel **Judul** merupakan _primamry key_ yang digunakan untuk membantu menggabungkan informasi dari tabel **Penulis**, **Instansi**, dan **Departemen**
 <p align="center">
   <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/Skema.png">
 </p>
