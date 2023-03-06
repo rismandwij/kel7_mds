@@ -24,7 +24,7 @@ Tabel **Judul** merupakan _primamry key_ yang digunakan untuk membantu menggabun
 
 ERD (Entity Relationship Diagram) menampilkan hubungan antara entitas dengan atribut. Pada project ini, entitas judul terdapat tiga atribut yang berhubungan dengan atribut pada entitas lain, yaitu id_sinta berhubungan dengan entitas penulis, id_instansi berhubungan dengan entitas instansi, id_dept berhubungan dengan entitas departemen.
 
-Selanjutnya, entitas penulis terdapat dua atribut yang berhubungan dengan atribut pada entitas lain, yaitu id_instansi berhubungan dengan entitas instansi, id_dept berhubungan dengan entitas departemen.
+Selanjutnya, entitas penulis terdapat dua atribut yang berhubungan dengan atribut pada entitas lain, yaitu id_instansi berhubungan dengan entitas instansi, id_dept bergubungan dengan entitas departemen.
 
 Selain itu, entitas departemen dan entitas instansi saling berhubungan pada atribut id_instansi.
 
@@ -34,6 +34,7 @@ Selain itu, entitas departemen dan entitas instansi saling berhubungan pada atri
 
 ## Database
 ### Create Database
+Databse sinta_jurnal menyimpan informasi yang mewakili atribut data yang saling berhubungan untuk kemudian dianalisis.
 ```sql
 CREATE DATABASE sinta_jurnal
     WITH
@@ -43,6 +44,7 @@ CREATE DATABASE sinta_jurnal
     IS_TEMPLATE = False;
 ```
 ### Create Table Instansi
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.instansi (
     id_instansi varchar(10) NOT NULL,
