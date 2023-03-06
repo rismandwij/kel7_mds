@@ -4,7 +4,9 @@
   <img width="400" height="143" src="http://bsdm.unas.ac.id/wp-content/uploads/2022/08/sinta_logo1.png">
 </p>
 
-Project akhir mata kuliah MDS mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud.
+Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud. Project ini mengspesifikasikan pencarian jurnal-jurnal yang berhubungan dengan **statistika** secara umum. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang dapat memudahkan user dalam mencari referensi jurnal untuk sebuah penelitian. User dapat mencari jurnal berdasarkan kategori yang di inginkan, misalnya pencarian berdasarkan sinta jurnal, instansi penulis, hingga tahun terbit jurnal terkait.
+
+
 
 Kelompok 7
 * **Akmarina Khairunnisa** (G1501221001) Sebagai **Frontend Developer**
@@ -13,12 +15,18 @@ Kelompok 7
 * **L.M. Risman Dwi Jumansyah** (G1501222040) Sebagai **Database Manager**
 
 ## Skema
-
+Tabel **Judul** merupakan _primamry key_ yang digunakan untuk membantu menggabungkan informasi dari tabel **Penulis**, **Instansi**, dan **Departemen**
 <p align="center">
-  <img width="600" height="400" src="https://github.com/rismandwij/Data/raw/main/Screenshot%20(99).png">
+  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/Skema.png">
 </p>
 
 ## ERD
+
+ERD (Entity Relationship Diagram) menampilkan hubungan antara entitas dengan atribut. Pada project ini, entitas judul terdapat tiga atribut yang berhubungan dengan atribut pada entitas lain, yaitu id_sinta berhubungan dengan entitas penulis, id_instansi berhubungan dengan entitas instansi, id_dept berhubungan dengan entitas departemen.
+
+Selanjutnya, entitas penulis terdapat dua atribut yang berhubungan dengan atribut pada entitas lain, yaitu id_instansi berhubungan dengan entitas instansi, id_dept bergubungan dengan entitas departemen.
+
+Selain itu, entitas departemen dan entitas instansi saling berhubungan pada atribut id_instansi.
 
 <p align="center">
   <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/ERD.jpeg">
@@ -88,15 +96,15 @@ CREATE TABLE IF NOT EXISTS public.judul (
     id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL, 
     id_paper varchar(10) COLLATE pg_catalog."default" NOT NULL,  
-    judul_paper varchar(200) NOT NULL,
-    nama_penerbit varchar(100),
-    nama_journal varchar(100),
-    penulis_ke int(1),
-    jumlah_penulis int(1),
-    team_penulis varchar(100),
-    tahun_terbit varchar(4),
-    doi varchar(50),
-    accred varchar(10),    
+    judul_paper char(200) NOT NULL,
+    nama_penerbit char(100),
+    nama_journal char(100),
+    penulis_ke int,
+    jumlah_penulis int,
+    team_penulis char(100),
+    tahun_terbit char(4),
+    doi char(50),
+    accred char(10),    
     CONSTRAINT judul_pkey PRIMARY KEY (id_paper),
     CONSTRAINT judul_id_penulis_fkey FOREIGN KEY (id_sinta)
         REFERENCES public.penulis (id_sinta) MATCH SIMPLE
@@ -107,7 +115,7 @@ CREATE TABLE IF NOT EXISTS public.judul (
         ON UPDATE NO ACTION
         ON DELETE NO ACTION,
     CONSTRAINT judul_id_dept_fkey FOREIGN KEY (id_dept)
-        REFERENCES public.dept (id_dept) MATCH SIMPLE
+        REFERENCES public.departemen (id_dept) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
     );
