@@ -47,7 +47,7 @@ CREATE DATABASE sinta_jurnal
 CREATE TABLE IF NOT EXISTS public.instansi (
     id_instansi varchar(10) NOT NULL,
     nama_instansi varchar(100) NOT NULL,
-    lokasi varchar(50),
+    lokasi varchar(200),
 	jumlah_penulis int,
 	jumlah_departement int,
 	jumlah_journals int,
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS public.instansi (
 CREATE TABLE IF NOT EXISTS public.departemen (
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
     id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    nama_departemen varchar(50),
+    nama_departemen varchar(100),
     CONSTRAINT departemen_pkey PRIMARY KEY (id_dept),
     CONSTRAINT departemen_id_instansi_fkey FOREIGN KEY (id_instansi)
         REFERENCES public.instansi (id_instansi) MATCH SIMPLE
@@ -74,7 +74,7 @@ CREATE TABLE IF NOT EXISTS public.penulis (
     nama_penulis char(100) NOT NULL, 
     id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
-    subject_list varchar(150),
+    subject_list varchar(200),
     sinta_score_ovr int,
     jumlah_article_scopus int,
     jumlah_article_gscholar int,
@@ -96,15 +96,15 @@ CREATE TABLE IF NOT EXISTS public.judul (
     id_instansi varchar(10) COLLATE pg_catalog."default" NOT NULL,
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL, 
     id_paper varchar(10) COLLATE pg_catalog."default" NOT NULL,  
-    judul_paper char(200) NOT NULL,
-    nama_penerbit char(100),
-    nama_journal char(100),
+    judul_paper char(500) NOT NULL,
+    nama_penerbit char(500),
+    nama_journal char(500),
     penulis_ke int,
     jumlah_penulis int,
-    team_penulis char(100),
+    team_penulis char(500),
     tahun_terbit char(4),
-    doi char(50),
-    accred char(10),    
+    doi char(100),
+    accred char(50),    
     CONSTRAINT judul_pkey PRIMARY KEY (id_paper),
     CONSTRAINT judul_id_penulis_fkey FOREIGN KEY (id_sinta)
         REFERENCES public.penulis (id_sinta) MATCH SIMPLE
