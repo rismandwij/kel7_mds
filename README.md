@@ -34,7 +34,7 @@ Selain itu, entitas departemen dan entitas instansi saling berhubungan pada atri
 
 ## Database
 ### Create Database
-Databse sinta_jurnal menyimpan informasi yang mewakili atribut data yang saling berhubungan untuk kemudian dianalisis.
+Databse Sinta Jurnal menyimpan informasi yang mewakili atribut data yang saling berhubungan untuk kemudian dianalisis.
 ```sql
 CREATE DATABASE sinta_jurnal
     WITH
