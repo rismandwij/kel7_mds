@@ -44,7 +44,7 @@ CREATE DATABASE sinta_jurnal
     IS_TEMPLATE = False;
 ```
 ### Create Table Instansi
-
+Table instansi memberikan informasi kepada user mengenai lembaga asal penulis jurnal sinta, sehingga user dapat mengetahui id instansi penulis, nama instansi penulis, jumlah penulis pada instansi tersebut, jumlah departemen pada instansi dan jumlah jurnal yang telah diterbitkan oleh setiap instansi.
 ```sql
 CREATE TABLE IF NOT EXISTS public.instansi (
     id_instansi varchar(10) NOT NULL,
@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS public.instansi (
 );
 ```
 ### Create Table Departement
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.departemen (
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
@@ -70,6 +71,7 @@ CREATE TABLE IF NOT EXISTS public.departemen (
 );
 ```
 ### Create Table Penulis
+Table penulis memberikan informasi kepada user mengenai beberapa identitas penulis jurnal. User dapat mengetahui id sinta dari penulis, nama penulis jurnal, asal penulis melalui id instnasi dan id departemen. Selain itu, terdapat informasi mengenai jumlah artikel yang telah diterbitkan oleh penulis baik terindeks scopus maupun google scholar.
 ```sql
 CREATE TABLE IF NOT EXISTS public.penulis (
     id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
@@ -92,6 +94,7 @@ CREATE TABLE IF NOT EXISTS public.penulis (
 );
 ```
 ### Create Table Judul
+
 ```sql
 CREATE TABLE IF NOT EXISTS public.judul (
     id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
