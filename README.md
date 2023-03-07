@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS public.penulis (
 );
 ```
 ### Create Table Judul
-
+Table judul menyajikan informasi lengkap mengenai sebuah artikel. Selain dapat mengetahui judul, user juga akan mendapatkan informasi doi dan tahun terbit sebuah artikel. Nama penulis, team penulis hingga urutan penulis tersaji pada table ini. Tidak hanya itu, akan ditampilkan pula nama penerbit dan nama jurnal yang dipercayakan penulis untuk mempublikasikan karyanya. Lebih lanjut, informasi spesifik mengenai id sinta, id departemen, id instansi dan id paper dapat diketahui melalui table ini.
 ```sql
 CREATE TABLE IF NOT EXISTS public.judul (
     id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
