@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS public.instansi (
 );
 ```
 ### Create Table Departement
-
+Table departemen memberikan informasi yang memudahkan user mengetahui asal penulis melalui id departemen penulis, id instansi penulis dan nama departemen penulis terkait. Id departemen adalah kode yang digunakan untuk membedakan nama departemen yang sama pada tiap instansi.
 ```sql
 CREATE TABLE IF NOT EXISTS public.departemen (
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
