@@ -1,26 +1,71 @@
-# Project Akhir MDS 2023
 
 <p align="center">
   <img width="400" height="143" src="http://bsdm.unas.ac.id/wp-content/uploads/2022/08/sinta_logo1.png">
 </p>
 
+<div align="center">
+
+# Database Jurnal Statistika
+
+[Tentang](#scroll-tentang)
+•
+[Screenshot](#rice_scene-screenshot)
+•
+[Demo](#dvd-demo)
+•
+[Dokumentasi](#blue_book-dokumentasi)
+
+</div>
+
+## :bookmark_tabs: Menu
+
+- [Tentang](#scroll-tentang)
+- [Screenshot](#rice_scene-screenshot)
+- [Demo](#dvd-demo)
+- [Dokumentasi](#blue_book-dokumentasi)
+- [Requirements](#exclamation-requirements)
+- [Skema Database](#floppy_disk-skema-database)
+- [ERD](#rotating_light-erd)
+- [Deskripsi Data](#heavy_check_mark-deskripsi-data)
+- [Struktur Folder](#open_file_folder-struktur-folder)
+- [Tim Pengembang](#smiley_cat-tim-pengembang)
+
+## :scroll: Tentang
+
 Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Jurnal atau Paper pada website Sinta Kemendikbud. Project ini mengspesifikasikan pencarian jurnal-jurnal yang berhubungan dengan **statistika** secara umum. Hasil yang diharapkan adalah terbentuknya sebuah platform manajemen database berupa web application yang dapat memudahkan user dalam mencari referensi jurnal untuk sebuah penelitian. User dapat mencari jurnal berdasarkan kategori yang di inginkan, misalnya pencarian berdasarkan sinta jurnal, instansi penulis, hingga tahun terbit jurnal terkait.
 
+## :rice_scene: Screenshot
 
+![Logo](https://via.placeholder.com/750x500)
 
-Kelompok 7
-* **Akmarina Khairunnisa** (G1501221001) Sebagai **Frontend Developer**
-* **Megawati** (G1501221026) Sebagai **Techincal Writer**
-* **Rafika Aufa Hasibuan** (G1501222040) Sebagai **Backend Developer**
-* **L.M. Risman Dwi Jumansyah** (G1501222040) Sebagai **Database Manager**
+## :dvd: Demo
 
-## Skema
-Tabel **Judul** merupakan _primamry key_ yang digunakan untuk membantu menggabungkan informasi dari tabel **Penulis**, **Instansi**, dan **Departemen**
+Berikut merupakan link untuk shinnyapps atau dashboard dari project kami.
+
+| url                      | login          | password |
+| ------------------------ | -------------- | -------- |
+| https://akmarinak98.shinyapps.io/database_publikasi_statistika/ | admin@mail.com | 123      |
+
+## :blue_book: Dokumentasi 
+
+Dokumentasi penggunaan aplikasi database. Anda dapat juga membuat dokumentasi lives menggunakan readthedocs.org (opsional).
+
+## :exclamation: Requirements
+
+- Scrapping data menggunakan package R yaitu `rvest` dengan pendukung package lainnya seperti `tidyverse`,`rio`,`kableExtra` dan `stingr`  
+- RDBMS yang digunakan adalah PostgreSQL dan ElephantSQL
+- Dashboard menggunakan `shinny` dan `shinnyapps` dari package R
+
+## :floppy_disk: Skema Database
+
+Tabel **Judul** merupakan _primary key_ yang digunakan untuk membantu menggabungkan informasi dari tabel **Penulis**, **Instansi**, dan **Departemen**
+
 <p align="center">
   <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/Skema.png">
 </p>
 
-## ERD
+
+## :rotating_light: ERD
 
 ERD (Entity Relationship Diagram) menampilkan hubungan antara entitas dengan atribut. Pada project ini, entitas judul terdapat tiga atribut yang berhubungan dengan atribut pada entitas lain, yaitu id_sinta berhubungan dengan entitas penulis, id_instansi berhubungan dengan entitas instansi, id_dept berhubungan dengan entitas departemen.
 
@@ -32,7 +77,29 @@ Selain itu, entitas departemen dan entitas instansi saling berhubungan pada atri
   <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/ERD.jpg">
 </p>
 
-## Database
+## :heavy_check_mark: Deskripsi Data
+
+Berisi tentang tabel-tabel yang digunakan berikut dengan sintaks SQL DDL (CREATE).
+
+Contoh:
+
+### 1. Tabel *yo_user*
+
+Tabel *yo_user* merupakan tabel yang memuat data demografi panelis, adapun detail atribut dan deskripsi dari masing-masing adalah sebagai berikut:
+
+| Attribute    | Type                  | Description                     |
+|:-------------|:----------------------|:--------------------------------|
+| id           | character varying(10) | Id panelis                      |
+| uid          | character varying(8)  | Unique id panelis               |
+| username     | character varying(30) | Username                        |
+| firstname    | character varying(15) | Firstname                       |
+| lastname     | character varying(15) | Lastname                        |
+| gender       | smallint              | Jenis kelamin                   |
+| province_id  | character varying(10) | Asal provinsi                   |
+| city_id      | character varying(10) | Asal kota                       |
+| birthdate    | timestamp             | Tanggal lahir                   |
+| linkshare_id | character varying(10) | Informasi join melalui campaign |
+
 ### Create Database
 Databse Sinta Jurnal menyimpan informasi yang mewakili atribut data yang saling berhubungan untuk kemudian dianalisis.
 ```sql
@@ -125,3 +192,32 @@ CREATE TABLE IF NOT EXISTS public.judul (
         ON DELETE NO ACTION
     );
 ```
+
+## :open_file_folder: Struktur Folder
+
+```
+.
+├── app           # ShinyApps
+│   ├── css
+│   │   ├── **/*.css
+│   ├── server.R
+│   └── ui.R
+├── data 
+│   ├── csv
+│   │   ├── **/*.css
+│   └── sql
+|       └── db.sql
+├── src           # Project source code
+├── doc           # Doc for the project
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+## :smiley_cat: Tim Pengembang
+
+- Frontend Developer: [Akmarina Khairunnisa](https://github.com/akmarinak) (G1501221001)
+- Backend Developer: [Rafika Aufa Hasibuan](https://github.com/rafikaaufa) (G1501222040)
+- Technical Writer: [Megawati](https://github.com/akmarinak) (G1501221026)
+- Database Manager: [L.M. Risman Dwi Jumansyah](https://github.com/rismandwij) (G1501221001)
+
