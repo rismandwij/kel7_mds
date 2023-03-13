@@ -29,7 +29,7 @@ Selanjutnya, entitas penulis terdapat dua atribut yang berhubungan dengan atribu
 Selain itu, entitas departemen dan entitas instansi saling berhubungan pada atribut id_instansi.
 
 <p align="center">
-  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/ERD.jpeg">
+  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/ERD.jpg">
 </p>
 
 ## Database
