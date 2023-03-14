@@ -58,8 +58,7 @@ Dokumentasi penggunaan aplikasi database. Anda dapat juga membuat dokumentasi li
 
 ## :floppy_disk: Skema Database
 
-Tabel **Judul** merupakan _primary key_ yang digunakan untuk membantu menggabungkan informasi dari tabel **Penulis**, **Instansi**, dan **Departemen**
-
+Menggambarkan struktur *primary key* **judul**, **penulis**, **instansi** dan **departemen** dengan masing-masing *foreign key* dalam membangun relasi antara tabel atau entitas.
 <p align="center">
   <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/Skema.png">
 </p>
