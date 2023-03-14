@@ -111,6 +111,11 @@ CREATE DATABASE sinta_jurnal
 ```
 ### Create Table Instansi
 Table instansi memberikan informasi kepada user mengenai lembaga asal penulis jurnal sinta, sehingga user dapat mengetahui id instansi penulis, nama instansi penulis, jumlah penulis pada instansi tersebut, jumlah departemen pada instansi dan jumlah jurnal yang telah diterbitkan oleh setiap instansi.
+| **Nama**      | **Deskripsi** | **Nama**          | **Deskripsi**                  |
+|---------------|---------------|-------------------|--------------------------------|
+| id_instansi   | Kode Instans  | jumlah_penulis    | Jumlah Penulis                 |
+| nama_instansi | Nama Instansi | jumlah_depaetemen | Jumlah Departemen              |
+| lokasi        | Lokasi        | jumlah_journals   | Jumlah Jurnal yang Diterbitkan |
 ```sql
 CREATE TABLE IF NOT EXISTS public.instansi (
     id_instansi varchar(10) NOT NULL,
