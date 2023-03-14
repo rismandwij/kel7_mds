@@ -176,7 +176,16 @@ CREATE TABLE IF NOT EXISTS public.penulis (
 );
 ```
 ### Create Table Judul
-Table judul menyajikan informasi lengkap mengenai sebuah artikel. Selain dapat mengetahui judul, user juga akan mendapatkan informasi doi dan tahun terbit sebuah artikel. Nama penulis, team penulis hingga urutan penulis tersaji pada table ini. Tidak hanya itu, akan ditampilkan pula nama penerbit dan nama jurnal yang dipercayakan penulis untuk mempublikasikan karyanya. Lebih lanjut, informasi spesifik mengenai id sinta, id departemen, id instansi dan id paper dapat diketahui melalui table ini.
+Table judul menyajikan informasi lengkap mengenai sebuah artikel. Selain dapat mengetahui judul, user juga akan mendapatkan informasi doi dan tahun terbit sebuah artikel. Nama penulis, team penulis hingga urutan penulis tersaji pada table ini. Tidak hanya itu, akan ditampilkan pula nama penerbit dan nama jurnal yang dipercayakan penulis untuk mempublikasikan karyanya. Lebih lanjut, informasi spesifik mengenai id sinta, id departemen, id instansi dan id paper dapat diketahui melalui table ini.  Berikut deskripsi untuk setiap tabel judul.
+| **Nama**      | **Deskripsi**       | **Nama**       | **Deskripsi**                                 |
+|---------------|---------------------|----------------|-----------------------------------------------|
+| id_sinta      | Kode Sinta          | penulis_ke     | Urutan Nama Penulis pada Jurnal               |
+| id_instansi   | Kode Instansi       | jumlah_penulis | Jumlah Penulis                                |
+| id_dept       | Kode Departemen     | team_penulis   | Nama-Nama Penulis                             |
+| id_paper      | Kode Jurnal/Artikel | tahun_terbit   | Tahun Terbit                                  |
+| judul_paper   | Judul Paper         | doi            | Tautan Persisten yang Menghubungkan ke Jurnal |
+| nama_penerbit | Nama Penerbit       | accred         | Akreditasi                                    |
+| nama_journal  | Nama Jurnal         |              
 ```sql
 CREATE TABLE IF NOT EXISTS public.judul (
     id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
