@@ -110,7 +110,7 @@ CREATE DATABASE sinta_jurnal
     IS_TEMPLATE = False;
 ```
 ### Create Table Instansi
-Table instansi memberikan informasi kepada user mengenai lembaga asal penulis jurnal sinta, sehingga user dapat mengetahui id instansi penulis, nama instansi penulis, jumlah penulis pada instansi tersebut, jumlah departemen pada instansi dan jumlah jurnal yang telah diterbitkan oleh setiap instansi.
+Table instansi memberikan informasi kepada user mengenai lembaga asal penulis jurnal sinta, sehingga user dapat mengetahui id instansi penulis, nama instansi penulis, jumlah penulis pada instansi tersebut, jumlah departemen pada instansi dan jumlah jurnal yang telah diterbitkan oleh setiap instansi. Berikut deskripsi untuk setiap tabel instansi.
 | **Nama**      | **Deskripsi** | **Nama**          | **Deskripsi**                  |
 |---------------|---------------|-------------------|--------------------------------|
 | id_instansi   | Kode Instansi | jumlah_penulis    | Jumlah Penulis                 |
@@ -128,7 +128,7 @@ CREATE TABLE IF NOT EXISTS public.instansi (
 );
 ```
 ### Create Table Departement
-Table departemen memberikan informasi yang memudahkan user mengetahui asal penulis melalui id departemen penulis, id instansi penulis dan nama departemen penulis terkait. Id departemen adalah kode yang digunakan untuk membedakan nama departemen yang sama pada tiap instansi.
+Table departemen memberikan informasi yang memudahkan user mengetahui asal penulis melalui id departemen penulis, id instansi penulis dan nama departemen penulis terkait. Id departemen adalah kode yang digunakan untuk membedakan nama departemen yang sama pada tiap instansi. Berikut deskripsi untuk setiap tabel departemen.
 | **Nama**      | **Deskripsi**   |
 |---------------|-----------------|
 | id_dept       | Kode Departemen |
@@ -147,7 +147,13 @@ CREATE TABLE IF NOT EXISTS public.departemen (
 );
 ```
 ### Create Table Penulis
-Table penulis memberikan informasi kepada user mengenai beberapa identitas penulis jurnal. User dapat mengetahui id sinta dari penulis, nama penulis jurnal, asal penulis melalui id instnasi dan id departemen. Selain itu, terdapat informasi mengenai jumlah artikel yang telah diterbitkan oleh penulis baik terindeks scopus maupun google scholar.
+Table penulis memberikan informasi kepada user mengenai beberapa identitas penulis jurnal. User dapat mengetahui id sinta dari penulis, nama penulis jurnal, asal penulis melalui id instnasi dan id departemen. Selain itu, terdapat informasi mengenai jumlah artikel yang telah diterbitkan oleh penulis baik terindeks scopus maupun google scholar. Berikut deskripsi untuk setiap tabel penulis.
+| **Nama**     | **Deskripsi**   | **Nama**                | **Deskripsi**                                    |
+|--------------|-----------------|-------------------------|--------------------------------------------------|
+| id_sinta     | Kode Sinta      | subject_list            | Bidang Ilmu yang Dikuasai Penulis                |
+| nama_penulis | Nama Penulis    | sinta_score_ovr         | Jumlah Skor Sinta                                |
+| id_instansi  | Kode Instansi   | jumlah_article_scopus   | Jumlah Artikel yang Terbitkan oleh Scopus        |
+| id_dept      | Kode Departemen | jumlah_article_gscholar | Jumlah Artikel yang Terbitkan oleh Google Sholar |
 ```sql
 CREATE TABLE IF NOT EXISTS public.penulis (
     id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
