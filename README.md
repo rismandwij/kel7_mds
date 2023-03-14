@@ -113,7 +113,7 @@ CREATE DATABASE sinta_jurnal
 Table instansi memberikan informasi kepada user mengenai lembaga asal penulis jurnal sinta, sehingga user dapat mengetahui id instansi penulis, nama instansi penulis, jumlah penulis pada instansi tersebut, jumlah departemen pada instansi dan jumlah jurnal yang telah diterbitkan oleh setiap instansi.
 | **Nama**      | **Deskripsi** | **Nama**          | **Deskripsi**                  |
 |---------------|---------------|-------------------|--------------------------------|
-| id_instansi   | Kode Instans  | jumlah_penulis    | Jumlah Penulis                 |
+| id_instansi   | Kode Instansi | jumlah_penulis    | Jumlah Penulis                 |
 | nama_instansi | Nama Instansi | jumlah_depaetemen | Jumlah Departemen              |
 | lokasi        | Lokasi        | jumlah_journals   | Jumlah Jurnal yang Diterbitkan |
 ```sql
@@ -129,6 +129,11 @@ CREATE TABLE IF NOT EXISTS public.instansi (
 ```
 ### Create Table Departement
 Table departemen memberikan informasi yang memudahkan user mengetahui asal penulis melalui id departemen penulis, id instansi penulis dan nama departemen penulis terkait. Id departemen adalah kode yang digunakan untuk membedakan nama departemen yang sama pada tiap instansi.
+| **Nama**      | **Deskripsi**   |
+|---------------|-----------------|
+| id_dept       | Kode Departemen |
+| id_instansi   | Kode Instansi   |
+| nama_instansi | Nama Instansi   |
 ```sql
 CREATE TABLE IF NOT EXISTS public.departemen (
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
