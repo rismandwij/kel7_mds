@@ -7,30 +7,18 @@ library(RPostgreSQL)
 library(dplyr)
 
 #======================= Koneksi Shiny ke Database =======================#
-# connectDB <- function(){
-#   driver <- dbDriver('PostgreSQL')
-#   # mengatur koneksi ke server database ElephantSQL
-#   DB <- dbConnect(
-#     driver,
-#     dbname = "gxhvvifq", # nama database
-#     host = "topsy.db.elephantsql.com",
-#     user = "gxhvvifq",
-#     password = "naY2KJEmWUNOWvuOwEutRtwlqE4iLH3L"
-#   )
-# }
-
 connectDB <- function(){
   driver <- dbDriver('PostgreSQL')
   # mengatur koneksi ke server database ElephantSQL
   DB <- dbConnect(
     driver,
-    dbname="jurnal",
-    host="localhost",
-    port=5432,
-    user="postgres",
-    password="N3j1t3nt3n98!"
+    dbname = "gxhvvifq", # nama database
+    host = "topsy.db.elephantsql.com",
+    user = "gxhvvifq",
+    password = "naY2KJEmWUNOWvuOwEutRtwlqE4iLH3L"
   )
 }
+
 #-----------------------------------------------------------------------------#
 # Query 1: Tabel Judul
 
