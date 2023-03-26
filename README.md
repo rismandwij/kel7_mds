@@ -40,11 +40,8 @@ Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Jurn
 
 ## :dvd: Demo
 
-Berikut merupakan link untuk shinnyapps atau dashboard dari project kami.
-
-| url                      | login          | password |
-| ------------------------ | -------------- | -------- |
-| https://akmarinak98.shinyapps.io/database_publikasi_statistika/ | admin@mail.com | 123      |
+Berikut merupakan link untuk shinnyapps atau dashboard dari project kami:
+https://akmarinak98.shinyapps.io/database_publikasi_statistika/
 
 ## :blue_book: Dokumentasi 
 
@@ -54,7 +51,7 @@ Dokumentasi penggunaan aplikasi database. Anda dapat juga membuat dokumentasi li
 
 - Scrapping data menggunakan package R yaitu `rvest` dengan pendukung package lainnya seperti `tidyverse`,`rio`,`kableExtra` dan `stingr`  
 - RDBMS yang digunakan adalah PostgreSQL dan ElephantSQL
-- Dashboard menggunakan `shinny` dan `shinnyapps` dari package R
+- Dashboard menggunakan `shinny`, `shinnythemes`, `bs4Dash`, `DT`, dan `dplyr` dari package R
 
 ## :floppy_disk: Skema Database
 
