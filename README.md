@@ -111,10 +111,10 @@ Table instansi memberikan informasi kepada user mengenai lembaga asal penulis ju
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
 | id_instansi        | character varying(10) | Id Instansi                     |
-| nama_instansi      | character varying(8)  | Nama Instansi                   |
-| lokasi             | character varying(30) | Lokasi                          |
-| jumlah_penulis     | character varying(15) | Jumlah Penulis                  |
-| jumlah_depaetemen  | character varying(15) | Jumlah Departemen               |
+| nama_instansi      | character varying(10) | Nama Instansi                   |
+| lokasi             | character varying(50) | Lokasi                          |
+| jumlah_penulis     | smallint 	     | Jumlah Penulis                  |
+| jumlah_depaetemen  | smallint		     | Jumlah Departemen               |
 | jumlah_journals    | smallint              | Jumlah Jurnal yang Diterbitkan  |
 
 dengan script SQL sebagai berikut:
@@ -134,8 +134,8 @@ Table departemen memberikan informasi yang memudahkan user mengetahui asal penul
 | Attribute          | Type                  | Description                     |
 |:-------------------|:----------------------|:--------------------------------|
 | id_dept            | character varying(10) | Id Departemen                   |
-| id_instansi        | character varying(8)  | Id Instansi                     |
-| nama_instansi      | character varying(30) | Nama Instansi                   |
+| id_instansi        | character varying(10) | Id Instansi                     |
+| nama_instansi      | character varying(50) | Nama Instansi                   |
 
 dengan script SQL sebagai berikut:
 ```sql
@@ -155,12 +155,12 @@ Table penulis memberikan informasi kepada user mengenai beberapa identitas penul
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
 | id_sinta                   | character varying(10) | Id Sinta                       		       |
-| nama_penulis               | character varying(8)  | Nama Penulis                   		       |
-| id_instansi                | character varying(30) | Id Instansi                     		       |	
-| id_dept                    | character varying(15) | Id Departemen                 		       |
-| subject_list               | character varying(15) | Bidang Ilmu yang Dikuasai Penulis               |
+| nama_penulis               | character varying(100)| Nama Penulis                   		       |
+| id_instansi                | character varying(10) | Id Instansi                     		       |	
+| id_dept                    | character varying(10) | Id Departemen                 		       |
+| subject_list               | character varying(150)| Bidang Ilmu yang Dikuasai Penulis               |
 | sinta_score_ovr    	     | smallint              | Jumlah Skor Sinta                               |
-| jumlah_article_scopus      | character varying(15) | Jumlah Artikel yang Terbitkan oleh Scopus       |
+| jumlah_article_scopus      | smallint		     | Jumlah Artikel yang Terbitkan oleh Scopus       |
 | jumlah_article_gscholar    | smallint              | Jumlah Artikel yang Terbitkan oleh Google Sholar|
 
 dengan script SQL sebagai berikut:
@@ -190,18 +190,18 @@ Table judul menyajikan informasi lengkap mengenai sebuah artikel. Selain dapat m
 | Attribute                  | Type                  | Description                     		       |
 |:---------------------------|:----------------------|:------------------------------------------------|
 | id_sinta                   | character varying(10) | Id Sinta                       		       |
-| id_instansi                | character varying(8)  | Id Instansi                  		       |
-| id_dept                    | character varying(30) | Id Departemen                   		       |	
-| id_paper                   | character varying(15) | Id Jurnal/Artikel                	       |
-| judul_paper                | character varying(15) | Judul Paper                                     |
-| nama_penerbit    	     | smallint              | Nama Penerbit                                   |
-| nama_journal               | character varying(15) | nama_journal     			       |
+| id_instansi                | character varying(10) | Id Instansi                  		       |
+| id_dept                    | character varying(10) | Id Departemen                   		       |	
+| id_paper                   | character varying(10) | Id Jurnal/Artikel                	       |
+| judul_paper                | character varying(200)| Judul Paper                                     |
+| nama_penerbit    	     | character varying(100)| Nama Penerbit                                   |
+| nama_journal               | character varying(100)| nama_journal     			       |
 | jenulis_ke		     | smallint              | Urutan Nama Penulis pada Jurnal		       |
-| jumlah_penulis             | character varying(15) | Jumlah Penulis                    	       |
-| team_penulis               | character varying(15) | Nama-Nama Penulis                               |
-| tahun_terbit    	     | smallint              | Tahun Terbit                                    |
-| doi	                     | character varying(15) | Tautan Persisten yang Menghubungkan ke Jurnal   |
-| accred		     | smallint              | UAkreditasi            			       |
+| jumlah_penulis             | smallint		     | Jumlah Penulis                    	       |
+| team_penulis               | character varying(100)| Nama-Nama Penulis                               |
+| tahun_terbit    	     | character varying(4)  | Tahun Terbit                                    |
+| doi	                     | character varying(50) | Tautan Persisten yang Menghubungkan ke Jurnal   |
+| accred		     | character varying(10) | Akreditasi            			       |
 
 dengan script SQL sebagai berikut:              
 ```sql
