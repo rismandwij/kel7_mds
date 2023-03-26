@@ -108,11 +108,16 @@ CREATE DATABASE sinta_jurnal
 ```
 ### Create Table Instansi
 Table instansi memberikan informasi kepada user mengenai lembaga asal penulis jurnal sinta, sehingga user dapat mengetahui id instansi penulis, nama instansi penulis, jumlah penulis pada instansi tersebut, jumlah departemen pada instansi dan jumlah jurnal yang telah diterbitkan oleh setiap instansi. Berikut deskripsi untuk setiap tabel instansi.
-| **Nama**      | **Deskripsi** | **Nama**          | **Deskripsi**                  |
-|---------------|---------------|-------------------|--------------------------------|
-| id_instansi   | Kode Instansi | jumlah_penulis    | Jumlah Penulis                 |
-| nama_instansi | Nama Instansi | jumlah_depaetemen | Jumlah Departemen              |
-| lokasi        | Lokasi        | jumlah_journals   | Jumlah Jurnal yang Diterbitkan |
+| Attribute          | Type                  | Description                     |
+|:-------------------|:----------------------|:--------------------------------|
+| id_instansi        | character varying(10) | Id Instansi                     |
+| nama_instansi      | character varying(8)  | Nama Instansi                   |
+| lokasi             | character varying(30) | Lokasi                          |
+| jumlah_penulis     | character varying(15) | Jumlah Penulis                  |
+| jumlah_depaetemen  | character varying(15) | Jumlah Departemen               |
+| jumlah_journals    | smallint              | Jumlah Jurnal yang Diterbitkan  |
+
+dengan script SQL sebagai berikut:
 ```sql
 CREATE TABLE IF NOT EXISTS public.instansi (
     id_instansi varchar(10) NOT NULL,
@@ -126,11 +131,13 @@ CREATE TABLE IF NOT EXISTS public.instansi (
 ```
 ### Create Table Departement
 Table departemen memberikan informasi yang memudahkan user mengetahui asal penulis melalui id departemen penulis, id instansi penulis dan nama departemen penulis terkait. Id departemen adalah kode yang digunakan untuk membedakan nama departemen yang sama pada tiap instansi. Berikut deskripsi untuk setiap tabel departemen.
-| **Nama**      | **Deskripsi**   |
-|---------------|-----------------|
-| id_dept       | Kode Departemen |
-| id_instansi   | Kode Instansi   |
-| nama_instansi | Nama Instansi   |
+| Attribute          | Type                  | Description                     |
+|:-------------------|:----------------------|:--------------------------------|
+| id_dept            | character varying(10) | Id Departemen                   |
+| id_instansi        | character varying(8)  | Id Instansi                     |
+| nama_instansi      | character varying(30) | Nama Instansi                   |
+
+dengan script SQL sebagai berikut:
 ```sql
 CREATE TABLE IF NOT EXISTS public.departemen (
     id_dept varchar(10) COLLATE pg_catalog."default" NOT NULL,
@@ -145,12 +152,18 @@ CREATE TABLE IF NOT EXISTS public.departemen (
 ```
 ### Create Table Penulis
 Table penulis memberikan informasi kepada user mengenai beberapa identitas penulis jurnal. User dapat mengetahui id sinta dari penulis, nama penulis jurnal, asal penulis melalui id instnasi dan id departemen. Selain itu, terdapat informasi mengenai jumlah artikel yang telah diterbitkan oleh penulis baik terindeks scopus maupun google scholar. Berikut deskripsi untuk setiap tabel penulis.
-| **Nama**     | **Deskripsi**   | **Nama**                | **Deskripsi**                                    |
-|--------------|-----------------|-------------------------|--------------------------------------------------|
-| id_sinta     | Kode Sinta      | subject_list            | Bidang Ilmu yang Dikuasai Penulis                |
-| nama_penulis | Nama Penulis    | sinta_score_ovr         | Jumlah Skor Sinta                                |
-| id_instansi  | Kode Instansi   | jumlah_article_scopus   | Jumlah Artikel yang Terbitkan oleh Scopus        |
-| id_dept      | Kode Departemen | jumlah_article_gscholar | Jumlah Artikel yang Terbitkan oleh Google Sholar |
+| Attribute                  | Type                  | Description                     		       |
+|:---------------------------|:----------------------|:------------------------------------------------|
+| id_sinta                   | character varying(10) | Id Sinta                       		       |
+| nama_penulis               | character varying(8)  | Nama Penulis                   		       |
+| id_instansi                | character varying(30) | Id Instansi                     		       |	
+| id_dept                    | character varying(15) | Id Departemen                 		       |
+| subject_list               | character varying(15) | Bidang Ilmu yang Dikuasai Penulis               |
+| sinta_score_ovr    	     | smallint              | Jumlah Skor Sinta                               |
+| jumlah_article_scopus      | character varying(15) | Jumlah Artikel yang Terbitkan oleh Scopus       |
+| jumlah_article_gscholar    | smallint              | Jumlah Artikel yang Terbitkan oleh Google Sholar|
+
+dengan script SQL sebagai berikut:
 ```sql
 CREATE TABLE IF NOT EXISTS public.penulis (
     id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
@@ -174,15 +187,23 @@ CREATE TABLE IF NOT EXISTS public.penulis (
 ```
 ### Create Table Judul
 Table judul menyajikan informasi lengkap mengenai sebuah artikel. Selain dapat mengetahui judul, user juga akan mendapatkan informasi doi dan tahun terbit sebuah artikel. Nama penulis, team penulis hingga urutan penulis tersaji pada table ini. Tidak hanya itu, akan ditampilkan pula nama penerbit dan nama jurnal yang dipercayakan penulis untuk mempublikasikan karyanya. Lebih lanjut, informasi spesifik mengenai id sinta, id departemen, id instansi dan id paper dapat diketahui melalui table ini.  Berikut deskripsi untuk setiap tabel judul.
-| **Nama**      | **Deskripsi**       | **Nama**       | **Deskripsi**                                 |
-|---------------|---------------------|----------------|-----------------------------------------------|
-| id_sinta      | Kode Sinta          | penulis_ke     | Urutan Nama Penulis pada Jurnal               |
-| id_instansi   | Kode Instansi       | jumlah_penulis | Jumlah Penulis                                |
-| id_dept       | Kode Departemen     | team_penulis   | Nama-Nama Penulis                             |
-| id_paper      | Kode Jurnal/Artikel | tahun_terbit   | Tahun Terbit                                  |
-| judul_paper   | Judul Paper         | doi            | Tautan Persisten yang Menghubungkan ke Jurnal |
-| nama_penerbit | Nama Penerbit       | accred         | Akreditasi                                    |
-| nama_journal  | Nama Jurnal         |              
+| Attribute                  | Type                  | Description                     		       |
+|:---------------------------|:----------------------|:------------------------------------------------|
+| id_sinta                   | character varying(10) | Id Sinta                       		       |
+| id_instansi                | character varying(8)  | Id Instansi                  		       |
+| id_dept                    | character varying(30) | Id Departemen                   		       |	
+| id_paper                   | character varying(15) | Id Jurnal/Artikel                	       |
+| judul_paper                | character varying(15) | Judul Paper                                     |
+| nama_penerbit    	     | smallint              | Nama Penerbit                                   |
+| nama_journal               | character varying(15) | nama_journal     			       |
+| jenulis_ke		     | smallint              | Urutan Nama Penulis pada Jurnal		       |
+| jumlah_penulis             | character varying(15) | Jumlah Penulis                    	       |
+| team_penulis               | character varying(15) | Nama-Nama Penulis                               |
+| tahun_terbit    	     | smallint              | Tahun Terbit                                    |
+| doi	                     | character varying(15) | Tautan Persisten yang Menghubungkan ke Jurnal   |
+| accred		     | smallint              | UAkreditasi            			       |
+
+dengan script SQL sebagai berikut:              
 ```sql
 CREATE TABLE IF NOT EXISTS public.judul (
     id_sinta varchar(10) COLLATE pg_catalog."default" NOT NULL,
