@@ -261,5 +261,5 @@ CREATE TABLE IF NOT EXISTS public.judul (
 - Frontend Developer: [Akmarina Khairunnisa](https://github.com/akmarinak) (G1501221001)
 - Backend Developer: [Rafika Aufa Hasibuan](https://github.com/rafikaaufa) (G1501222040)
 - Technical Writer: [Megawati](https://github.com/akmarinak) (G1501221026)
-- Database Manager: [L.M. Risman Dwi Jumansyah](https://github.com/rismandwij) (G1501221058)
+- Database Manager: [L.M. Risman Dwi Jumansyah](https://github.com/rismandwij) (G1501222058)
 
