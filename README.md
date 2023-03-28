@@ -37,7 +37,7 @@ Project akhir mata kuliah Manajemen Data Statistika mengambil topik tentang Jurn
 ## :rice_scene: Screenshot
 
 <p align="center">
-  <img width="900" height="500" src="https://github.com/rismandwij/kel7_mds/blob/main/Dashboar.png">
+  <img width="900" height="500" src="https://github.com/rismandwij/kel7_mds/doc/blob/main/Dashboar.png">
 </p>
 
 ## :dvd: Demo
