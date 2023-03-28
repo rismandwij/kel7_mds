@@ -1,0 +1,13 @@
+name: database_publikasi_statistika
+title: database_publikasi_statistika
+username:
+account: akmarinak98
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8555478
+bundleId: 7015968
+url: https://akmarinak98.shinyapps.io/database_publikasi_statistika/
+when: 1679961882.21734
+lastSyncTime: 1679961882.21735
+asMultiple: FALSE
+asStatic: FALSE
