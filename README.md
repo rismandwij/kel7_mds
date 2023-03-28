@@ -59,7 +59,7 @@ Dokumentasi penggunaan aplikasi database. Anda dapat juga membuat dokumentasi li
 
 Menggambarkan struktur *primary key* **judul**, **penulis**, **instansi** dan **departemen** dengan masing-masing *foreign key* dalam membangun relasi antara tabel atau entitas.
 <p align="center">
-  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/Skema.png">
+  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/doc/Skema.png">
 </p>
 
 
@@ -72,31 +72,12 @@ Selanjutnya, entitas penulis terdapat dua atribut yang berhubungan dengan atribu
 Selain itu, entitas departemen dan entitas instansi saling berhubungan pada atribut id_instansi.
 
 <p align="center">
-  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/ERD.jpg">
+  <img width="600" height="400" src="https://github.com/rismandwij/kel7_mds/blob/main/doc/ERD.jpg">
 </p>
 
 ## :heavy_check_mark: Deskripsi Data
 
 Berisi tentang tabel-tabel yang digunakan berikut dengan sintaks SQL DDL (CREATE).
-
-Contoh:
-
-### 1. Tabel *yo_user*
-
-Tabel *yo_user* merupakan tabel yang memuat data demografi panelis, adapun detail atribut dan deskripsi dari masing-masing adalah sebagai berikut:
-
-| Attribute    | Type                  | Description                     |
-|:-------------|:----------------------|:--------------------------------|
-| id           | character varying(10) | Id panelis                      |
-| uid          | character varying(8)  | Unique id panelis               |
-| username     | character varying(30) | Username                        |
-| firstname    | character varying(15) | Firstname                       |
-| lastname     | character varying(15) | Lastname                        |
-| gender       | smallint              | Jenis kelamin                   |
-| province_id  | character varying(10) | Asal provinsi                   |
-| city_id      | character varying(10) | Asal kota                       |
-| birthdate    | timestamp             | Tanggal lahir                   |
-| linkshare_id | character varying(10) | Informasi join melalui campaign |
 
 ### Create Database
 Databse Sinta Jurnal menyimpan informasi yang mewakili atribut data yang saling berhubungan untuk kemudian dianalisis.
